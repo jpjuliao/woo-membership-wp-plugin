@@ -5,12 +5,6 @@
  */
 class Woo_Membership extends Woo_Membership_Base
 {
-  /**
-   * Meta key for user membership status.
-   *
-   * @var string
-   */
-  private $meta_key = 'woo_membership_status';
 
   private function __construct()
   {

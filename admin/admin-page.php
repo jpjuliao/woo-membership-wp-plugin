@@ -11,10 +11,10 @@ $active_tab = isset($_GET['tab']) ? $_GET['tab'] : 'membership_settings';
       <?php
       if ($active_tab == 'membership_settings') {
         settings_fields('woo_membership_settings_group');
-        include_once(plugin_dir_path(__FILE__) . 'admin/membership-settings-page.php');
+        include_once(plugin_dir_path(__FILE__) . '../admin/membership-settings-page.php');
       } else {
         settings_fields('exclude-category-products-group');
-        include_once(plugin_dir_path(__FILE__) . 'admin/category-page.php');
+        include_once(plugin_dir_path(__FILE__) . '../admin/category-page.php');
       }
       ?>
       <?php submit_button(); ?>

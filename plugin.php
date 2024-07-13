@@ -1,6 +1,6 @@
 <?php
 /*
-Plugin Name: Woo Membership and Exclude Category Products
+Plugin Name: Woo Membership
 Description: Adds a meta field 'woo_membership_status' to the current user when buying a specific product and allows manual addition of membership from the admin page. Excludes all products of a specific category from all frontend queries.
 Version: 1.0
 Author: Juan Pablo Juliao

@@ -13,6 +13,13 @@ class Woo_Membership_Base
   private static $instance = null;
 
   /**
+   * Meta key for user membership status.
+   *
+   * @var string
+   */
+  protected $meta_key = 'woo_membership_status';
+
+  /**
    * Private constructor to enforce singleton pattern.
    */
   protected function __construct()
@@ -39,8 +46,8 @@ class Woo_Membership_Base
   public function add_admin_menu()
   {
     add_menu_page(
-      'Woo Membership & Exclude Category',
-      'Woo Membership & Exclude Category',
+      'Woo Membership',
+      'Woo Membership',
       'manage_options',
       'woo-membership-exclude-category',
       array($this, 'admin_page'),
@@ -53,7 +60,7 @@ class Woo_Membership_Base
    */
   public function admin_page()
   {
-    include_once(plugin_dir_path(__FILE__) . 'admin/admin-page.php');
+    include_once(plugin_dir_path(__FILE__) . '../admin/admin-page.php');
   }
 
 }
