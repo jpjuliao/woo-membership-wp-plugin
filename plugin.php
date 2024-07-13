@@ -9,8 +9,10 @@ Author URI: https://jpjuliao.github.io
 
 if (!class_exists('Woo_Membership')) {
 
-  include_once(plugin_dir_path(__FILE__) . 'classes/woo-membership-base-class.php');
-  include_once(plugin_dir_path(__FILE__) . 'classes/woo-membership-class.php');
+  include_once(
+    plugin_dir_path(__FILE__) . 'classes/woo-membership-base-class.php');
+  include_once(
+    plugin_dir_path(__FILE__) . 'classes/woo-membership-class.php');
 
   /**
    * Returns the main instance of the plugin.
