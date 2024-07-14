@@ -11,11 +11,6 @@ class Woo_Membership extends Woo_Membership_Base
     parent::__construct();
 
     add_action(
-      'admin_init',
-      array($this, 'register_settings')
-    );
-
-    add_action(
       'woocommerce_order_status_completed',
       array($this, 'handle_add_membership_on_order_completed'),
       10,
@@ -31,22 +26,6 @@ class Woo_Membership extends Woo_Membership_Base
     add_action(
       'pre_get_posts',
       array($this, 'exclude_membership_products_on_frontend_queries')
-    );
-  }
-
-  /**
-   * Registers the settings for the plugin.
-   */
-  public function register_settings()
-  {
-    register_setting(
-      'woo_membership_settings_group',
-      'woo_membership_product_id'
-    );
-
-    register_setting(
-      'woo_membership_settings_group',
-      'woo_membership_members_category'
     );
   }
 

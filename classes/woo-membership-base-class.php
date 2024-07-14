@@ -24,6 +24,12 @@ class Woo_Membership_Base
    */
   protected function __construct()
   {
+
+    add_action(
+      'admin_init',
+      array($this, 'register_settings')
+    );
+    
     add_action('admin_menu', array($this, 'add_admin_menu'));
   }
 
@@ -38,6 +44,22 @@ class Woo_Membership_Base
       self::$instance = new self();
     }
     return self::$instance;
+  }
+
+  /**
+   * Registers the settings for the plugin.
+   */
+  public function register_settings()
+  {
+    register_setting(
+      'woo_membership_settings_group',
+      'woo_membership_product_id'
+    );
+
+    register_setting(
+      'woo_membership_settings_group',
+      'woo_membership_members_category'
+    );
   }
 
   /**

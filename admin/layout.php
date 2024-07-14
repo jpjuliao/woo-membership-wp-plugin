@@ -13,9 +13,9 @@ $active_tab = isset($_GET['tab']) ? $_GET['tab'] : 'membership_settings';
 
   <form method="post" action="options.php">
     <?php
-    
+
     settings_fields('woo_membership_settings_group');
-    do_settings_sections('woo_membership_settings_group');
+    do_settings_sections('woo-membership-settings');
     
     if ($active_tab == 'membership_settings') {
       include_once(plugin_dir_path(__FILE__) . '../admin/tab-settings.php');
