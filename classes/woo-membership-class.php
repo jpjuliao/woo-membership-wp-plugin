@@ -41,7 +41,12 @@ class Woo_Membership extends Woo_Membership_Base
   {
     register_setting(
       'woo_membership_settings_group',
-      'woo_membership_settings'
+      'woo_membership_product_id'
+    );
+
+    register_setting(
+      'woo_membership_settings_group',
+      'woo_membership_members_category'
     );
   }
 
