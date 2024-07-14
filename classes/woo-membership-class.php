@@ -100,7 +100,6 @@ class Woo_Membership extends Woo_Membership_Base
    */
   public function exclude_membership_products_on_frontend_queries($query)
   {
-    // if user has meta key 'woo_membership_status' set to true, exclude products from category
     $user = wp_get_current_user();
     if ($user->exists() && get_user_meta($user->ID, $this->meta_key, true)) {
       return;
