@@ -49,7 +49,7 @@ class Woo_Membership_Base
       'Woo Membership',
       'Woo Membership',
       'manage_options',
-      'woo-membership-exclude-category',
+      'woo-membership-settings',
       array($this, 'admin_page'),
       'dashicons-admin-generic'
     );
