@@ -35,8 +35,14 @@
         $products = get_posts($args);
         $selected_product = get_option('woo_membership_product_id');
 
+        if (!$selected_product) {
+          echo '<option value="" disabled selected>- Choose a Product -</option>';
+        }
+
         foreach ($products as $product) {
-          echo '<option value="' . esc_attr($product->ID) . '" ' . selected($selected_product, $product->ID, false) . '>' . esc_html($product->post_title) . '</option>';
+          echo '<option value="' . esc_attr($product->ID) . '" ' . 
+          selected($selected_product, $product->ID, false) . '>' . 
+          esc_html($product->post_title) . '</option>';
         }
         ?>
       </select>

@@ -30,7 +30,7 @@
   </tbody>
 </table>
 
-<h2>Add Membership</h2>
+<h2>Subscribe user to Membership</h2>
 <?php wp_nonce_field('add_membership_nonce'); ?>
 <input type="hidden" name="action" value="add_membership">
 <table class="form-table">
@@ -38,6 +38,7 @@
     <th scope="row">Select User</th>
     <td>
       <select name="user_id">
+        <option value="" disabled selected>- Choose a User -</option>
         <?php
         $users = get_users(array('fields' => array('ID', 'user_login')));
 
