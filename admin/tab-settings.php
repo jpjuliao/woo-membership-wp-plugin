@@ -1,9 +1,10 @@
+<?php settings_fields('woo_membership_settings'); ?>
 <table class="form-table">
   <tr valign="top">
     <th scope="row">Select the product category for the Membership</th>
     <td>
       <?php
-      $selected_category = get_option('exclude_category_products_option');
+      $selected_category = get_option('woo_membership_settings_option');
       $args = array(
         'taxonomy' => 'product_cat',
         'orderby' => 'name',
@@ -11,7 +12,7 @@
       );
       $categories = get_categories($args);
       ?>
-      <select name="exclude_category_products_option">
+      <select name="woo_membership_settings_option">
         <?php 
         if (!$selected_category) {
           echo '<option value="" disabled selected>- Choose a Category -</option>';

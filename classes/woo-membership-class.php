@@ -41,7 +41,7 @@ class Woo_Membership extends Woo_Membership_Base
   {
     register_setting(
       'woo_membership_settings_group',
-      'woo_membership_product_id'
+      'woo_membership_settings'
     );
   }
 
@@ -80,13 +80,17 @@ class Woo_Membership extends Woo_Membership_Base
 
     if (isset($_POST['user_id'])) {
       $user_id = intval($_POST['user_id']);
+
       if ($user_id) {
+        
         update_user_meta($user_id, $this->meta_key, true);
+
         wp_redirect(
           add_query_arg('membership_added', 'true', wp_get_referer())
         );
         exit;
       }
+
     }
 
     wp_redirect(add_query_arg('membership_added', 'false', wp_get_referer()));

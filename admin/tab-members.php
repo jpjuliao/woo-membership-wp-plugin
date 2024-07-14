@@ -1,3 +1,4 @@
+<?php settings_fields('woo_membership_settings'); ?>
 <h2>Members List</h2>
 <table class="widefat fixed" cellspacing="0">
   <thead>
