@@ -60,7 +60,7 @@ class Woo_Membership_Base
    */
   public function admin_page()
   {
-    include_once(plugin_dir_path(__FILE__) . '../admin/admin-page.php');
+    include_once(plugin_dir_path(__FILE__) . '../admin/layout.php');
   }
 
 }
