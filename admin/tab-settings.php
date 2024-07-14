@@ -12,7 +12,12 @@
       $categories = get_categories($args);
       ?>
       <select name="exclude_category_products_option">
-        <?php foreach ($categories as $category) { ?>
+        <?php 
+        if (!$selected_category) {
+          echo '<option value="" disabled selected>- Choose a Category -</option>';
+        }
+
+        foreach ($categories as $category) { ?>
           <option value="<?php echo esc_attr($category->slug); ?>" <?php selected($selected_category, $category->slug); ?>>
             <?php echo esc_html($category->name); ?>
           </option>
