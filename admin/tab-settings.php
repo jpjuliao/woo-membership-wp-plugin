@@ -1,4 +1,3 @@
-<?php settings_fields('woo_membership_settings'); ?>
 <table class="form-table">
   <tr valign="top">
     <th scope="row">Select the product category for the Membership</th>
