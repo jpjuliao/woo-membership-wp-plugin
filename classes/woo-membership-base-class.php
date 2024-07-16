@@ -10,7 +10,7 @@ class Woo_Membership_Base
    *
    * @var Woo_Membership
    */
-  private static $instance = null;
+  public static $instance = null;
 
   /**
    * Get the singleton instance of the class.

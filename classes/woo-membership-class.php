@@ -11,17 +11,19 @@ class Woo_Membership extends Woo_Membership_Base
    *
    * @var string
    */
-  protected $membership_status_meta_key = 'woo_membership_status';
+  public $membership_status_meta_key = 'woo_membership_status';
 
-  private function __construct()
+  /**
+   * Constructor.
+   */
+  public function __construct()
   {
     foreach (array(
       'admin_init',
       'admin_menu',
       'pre_get_posts',
-      'woocommerce_order_status_completed',
       'admin_post_add_membership',
-      'register_settings'
+      'woocommerce_order_status_completed',
     ) as $action) {
       add_action($action, array($this, $action));
     }
@@ -45,7 +47,7 @@ class Woo_Membership extends Woo_Membership_Base
   /**
    * Registers the settings for the plugin.
    */
-  public function register_settings()
+  public function admin_init()
   {
     register_setting(
       'woo_membership_settings_group',
