@@ -3,7 +3,7 @@
 /**
  * Main plugin class for Woo Membership and Exclude Category Products.
  */
-class Woo_Membership extends Woo_Membership_Base
+class Woo_Membership
 {
 
   /**
@@ -38,7 +38,7 @@ class Woo_Membership extends Woo_Membership_Base
       'Woo Membership',
       'Woo Membership',
       'manage_options',
-      'woo-membership-list',
+      'woo-membership',
       array($this, 'admin_page'),
       'dashicons-admin-generic'
     );
@@ -60,14 +60,13 @@ class Woo_Membership extends Woo_Membership_Base
   }
 
   /**
-   * Renders the combined admin page with tabs for settings.
+   * Renders the combined admin page and run form submission handlers.
    */
   public function admin_page()
   {
-    do_action('admin_post_add_membership');
+    empty($_POST) || do_action('admin_post_add_membership');
     include_once(plugin_dir_path(__FILE__) . '../admin/dashboard.php');
   }
-
 
   /**
    * Adds a meta field to the current user when they purchase a specific product.
